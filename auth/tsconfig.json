@@ -6,7 +6,8 @@
     "skipLibCheck": true,
     "outDir": "./dist",
     "target": "es6",
-    "module": "commonjs"
+    "module": "commonjs",
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
   "include": ["src/**/*"]
 }
