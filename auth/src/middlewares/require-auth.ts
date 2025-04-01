@@ -9,7 +9,6 @@ export const requireAuth = (
 ) => {
   if (!req.currenUser) {
     console.log("I was called")
-    return;
     return new NotAuthorizedError();
   }
   console.log('I was called after check')
