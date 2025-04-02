@@ -7,10 +7,8 @@ export const requireAuth = (
   res: Response,
   next: NextFunction
 ) => {
-  if (!req.currenUser) {
-    console.log("I was called")
+  if (!req.currentUser) {
     return new NotAuthorizedError();
   }
-  console.log('I was called after check')
   next();
 };
