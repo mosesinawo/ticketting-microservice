@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "target": "es6",
+    "module": "commonjs",
+    "typeRoots": ["./types", "./node_modules/@types"]
+  },
+  "include": ["src/**/*"]
+}

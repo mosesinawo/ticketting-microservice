@@ -1,7 +1,7 @@
 import buildClient from "../api/build-client";
 
 const Home = ({ currentUser }) => {
-  console.log(currentUser);
+  
 
   return (
     <div>

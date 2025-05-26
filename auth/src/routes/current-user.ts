@@ -1,8 +1,8 @@
 //@ts-nocheck
+import { currentUser } from "@tickettingms/common";
 import express, { Request, Response } from "express";
 import jwt from "jsonwebtoken";
-import { currentUser } from "../middlewares";
-import { requireAuth } from "../middlewares";
+
 
 const router = express.Router();
 

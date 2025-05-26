@@ -3,11 +3,11 @@ import "express-async-errors";
 import { json } from "body-parser";
 import cookieSession from "cookie-session";
 
-import { currentUserRouter } from "./routes/current-user";
-import { signinRouter } from "./routes/signin";
-import { signoutRouter } from "./routes/signout";
-import { signupRouter } from "./routes/signup";
-import { errorHandler, NotFoundError } from "@tickettingms/common";
+import { createTicketRouter } from "./routes/new";
+// import { signinRouter } from "./routes/signin";
+// import { signoutRouter } from "./routes/signout";
+// import { signupRouter } from "./routes/signup";
+import { errorHandler, NotFoundError, currentUser } from "@tickettingms/common";
 
 
 const app = express();
@@ -20,10 +20,11 @@ app.use(
   })
 );
 
-app.use(currentUserRouter);
-app.use(signinRouter);
-app.use(signoutRouter);
-app.use(signupRouter);
+app.use(currentUser);
+app.use(createTicketRouter);
+// app.use(signinRouter);
+// app.use(signoutRouter);
+// app.use(signupRouter);
 
 app.all("*", async () => {
   throw new NotFoundError();
