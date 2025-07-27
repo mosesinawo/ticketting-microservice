@@ -8,6 +8,9 @@ import { createTicketRouter } from "./routes/new";
 // import { signoutRouter } from "./routes/signout";
 // import { signupRouter } from "./routes/signup";
 import { errorHandler, NotFoundError, currentUser } from "@tickettingms/common";
+import { showTicketRouter } from "./routes/show";
+import { indexTicketRouter } from "./routes";
+import { updateTicketRouter } from "./routes/update";
 
 
 const app = express();
@@ -22,9 +25,9 @@ app.use(
 
 app.use(currentUser);
 app.use(createTicketRouter);
-// app.use(signinRouter);
-// app.use(signoutRouter);
-// app.use(signupRouter);
+app.use(showTicketRouter);
+app.use(indexTicketRouter);
+app.use(updateTicketRouter);
 
 app.all("*", async () => {
   throw new NotFoundError();
